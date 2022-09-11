@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+#include <locale.h>
 
 /*Colocar o texto entre 
 aspas duplas e colocar o

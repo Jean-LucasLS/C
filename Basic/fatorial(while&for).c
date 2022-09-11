@@ -9,12 +9,12 @@ int main(){
     scanf("%d", &n);
     Nfor = n;
     while(n > 1){ // Laço while que continua as multiplicações até se obter o somatório fatorial
-        fat = fat * n; // O "fat" foi designado 1 no começo para que esta operação fosse possível
+        fat *= n; // O "fat" foi designado 1 no começo para que esta operação fosse possível
         n--; // O "n" diminui cada vez que se multiplica "fat", acumulando as multiplicações
     }
     printf("O fatorial equivale a %d (while)\n", fat);
     for (i>1; i = Nfor; i++){
-        fatFor = fatFor * Nfor;
+        fatFor *= Nfor;
         Nfor--;
     }
     printf("O fatorial equivale a %d (for)", fatFor);
