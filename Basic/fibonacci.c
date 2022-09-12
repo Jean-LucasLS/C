@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <locale.h>
+#include <conio.h>
 
 int main(){
     int n1 = 0, n2 = 1, soma, n, i;

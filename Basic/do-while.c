@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <locale.h>
+#include <conio.h>
 
 int main(){
     float x, p;

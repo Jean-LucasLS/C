@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <locale.h>
+#include <conio.h>
 
 int main(){
     int n, Nfor, fat = 1, fatFor = 1, i; // Criou-se "n" e "fat" para calcular fatorial com WHILE, e "Nfor" e "fatFor" para calcular-se fatorial utilizando-se FOR

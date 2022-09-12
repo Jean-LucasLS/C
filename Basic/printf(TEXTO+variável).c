@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <locale.h>
+#include <conio.h>
 
 /*Colocar o texto entre 
 aspas duplas e colocar o
