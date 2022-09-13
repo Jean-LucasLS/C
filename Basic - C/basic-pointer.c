@@ -5,9 +5,11 @@
 #include <conio.h>
 
 int main(){
-    int *pointer, k;
+    int k;
+    int *pointer;
     pointer = &k;
-    pointer = 8;
-    printf("%d", k);
+    *pointer = 8;
+    k = 6;
+    printf("k = %d\n*pointer = %d", k, *pointer);
     return 0;
 }
