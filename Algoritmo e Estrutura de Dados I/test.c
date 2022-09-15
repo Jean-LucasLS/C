@@ -10,6 +10,6 @@ int main(){
     printf("i = %d\nk = %d", i, k);
     k = 1;
     i = ++k; // Primeiro há incremento em "k", depois este é igualado a "i".
-    printf("\ni = %d\nk = %d", i, k);
+    printf("\n\ni = %d\nk = %d", i, k);
     return 0;
 }
