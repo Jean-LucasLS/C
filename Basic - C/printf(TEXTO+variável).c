@@ -9,7 +9,7 @@ aspas duplas e colocar o
 {"%" + "tipo de variável"}*/
 
 int main(){
-    char Validation = 'Y';
+    char Validation = 'V'; // Teste de variável "char"
     float idade, peso, altura;
     printf("Digite sua idade, peso e altura:\n");
     scanf("%f %f %f", &idade, &peso, &altura);

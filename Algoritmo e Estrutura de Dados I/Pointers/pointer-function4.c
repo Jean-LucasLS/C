@@ -4,12 +4,14 @@
 #include <locale.h>
 #include <conio.h>
 
-int main(){
-    int k;
-    int *pointer;
+void op(int *pointer){
+    *pointer = 6;
+}
+
+int main(Void){
+    int k, *pointer;
     pointer = &k;
-    *pointer = 8;
-    k = 6;
+    op(pointer);
     printf("k = %d\n*pointer = %d", k, *pointer);
     return 0;
 }
