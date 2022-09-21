@@ -81,9 +81,10 @@ int main(){
             qf = 1;
             j = i;
         }
+        printf("\n");
     }
     if (contM > 0){
-        printf("\nM ");
+        printf("M ");
         for (j = 0; j < contM;){
             printf("%.1f", M[j]);
             for (i = j + 1; M[i] == M[j]; i++){

@@ -2,14 +2,18 @@
 #include <stdlib.h>
 
 int main(Void){
-    int *k, c = 6;
-    k = &c;
-    salsichao(k);
-    printf("\n%d", *k);
+    char *nome; 
+    int num, i;
+    scanf("%d", &num);
+    nome = (char *)malloc(num*sizeof(char));
+    for (i = 0; i <= num; i++){
+        scanf("%c", &nome[i]);
+    }
+    for (i = num; i >= 0; i--){
+        printf("%c", nome[i]);
+    }
+    printf("%c", nome[0]);
+    free(nome);
     return 0;
 }
 
-void salsichao( int *k){
-    printf("Salsichao!\n");
-    printf("%d", *k);
-}
