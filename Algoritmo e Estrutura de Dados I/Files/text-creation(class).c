@@ -4,8 +4,10 @@
 int main(Void){
     FILE *arquivo; // Declaração de uma FILE tipo ponteiro.
     char texto[100], nome[100];
-    gets(texto);
+    printf("Digite o nome do arquivo:\n");
     gets(nome);
+    printf("Digite o texto que deseja salvar:\n");
+    gets(texto);
     arquivo = fopen(nome, "w");
     fputs(texto, arquivo);
     fclose(arquivo);
