@@ -73,8 +73,16 @@ void Remove(Jujuba *listaux, int RA){
     }
     for(i = listaux -> first; i != -1; i = listaux -> element[i].next){
         if(RA == listaux -> element[i].value){
+            if(RA == listaux -> element[listaux -> last].value){
+                listaux -> last = prev;
+                listaux -> free[i] = 1;
+                listaux -> element[prev].next = -1;
+                listaux -> size--;
+                return;
+            }
             listaux -> free[i] = 1;
             listaux -> element[prev].next = listaux -> element[i].next;
+            listaux -> size--;
             return;
         }
     prev = i;
@@ -92,9 +100,16 @@ int SearchFree(Jujuba *listaux){ // Função que retorna o índice do primeiro e
     return -1;
 }
 
+void PrintList(Jujuba *listaux){
+    int j;
+    for(j = listaux -> first; j != -1; j = listaux -> element[j].next){
+        printf("%d ", listaux -> element[j].value);
+    }
+}
+
 int main(){
-    int L, op, RA, i, j=0, pfree;
-    int c11, c12, c13, c14, c15, c16, c17, c18; // Contadores para os anos de 2011-2018.
+    int L, op, RA, i, pfree;
+    int c11=0, c12=0, c13=0, c14=0, c15=0, c16=0, c17=0, c18=0; // Contadores para os anos de 2011-2018.
     Jujuba list;
     Start(&list);
     scanf("%d", &L);
@@ -105,28 +120,45 @@ int main(){
                 pfree = SearchFree(&list); // "pfree" tem como intuito verificar o índice do espaço livre. Caso seja "-1", a lista está cheia.
                 if (pfree != -1){          // Caso o valor retornado seja diferente de -1, significa que a lista não está cheia.
                 Insert(&list, RA, pfree);
-
-                for(j = list.first; j != -1; j = list.element[j].next){
-                    printf("%d\n", list.element[j].value);
-                }
-
+                    if(RA / 1000 == 66){
+                        c11+=1;
+                    }
+                    if(RA / 1000 == 76){
+                        c12++;
+                    }
+                    if(RA / 1000 == 86){
+                        c13++;
+                    }
+                    if(RA / 1000 == 96){
+                        c14++;
+                    }
+                    if(RA / 1000 == 106){
+                        c15++;
+                    }
+                    if(RA / 1000 == 116){
+                        c16++;
+                    }
+                    if(RA / 1000 == 126){
+                        c17++;
+                    }
+                    if(RA / 1000 == 136 || RA == 140000){
+                        c18++;
+                    }
+                    PrintList(&list);
                 }
                 else{ // Caso seja "-1", a lista está cheia.
-                    printf("lista cheia.\n");
+                    printf("lista cheia\n");
+                    PrintList(&list);
                 }
+                printf("\n");
                 break;
             case 2:
                 Remove(&list, RA);
-
-                for(j = list.first; j != -1; j = list.element[j].next){
-                     printf("%d\n", list.element[j].value);
-                }
+                PrintList(&list);
+                printf("\n");
                 break;
         }
     }
-    printf("%d\n", list.first);
-    for(j = list.first; j != -1; j = list.element[j].next){
-        printf("%d ", list.element[j].value);
-    }
+    printf("2011: %d\n2012: %d\n2013: %d\n2014: %d\n2015: %d\n2016: %d\n2017: %d\n2018: %d", c11, c12, c13, c14, c15, c16, c17, c18);
     return 0;
 }
