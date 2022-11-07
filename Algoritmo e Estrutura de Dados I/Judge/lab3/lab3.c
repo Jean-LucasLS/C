@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define N 10
-
+ 
 typedef struct Jockey{
     int idprod;
     int amount;
@@ -10,13 +10,13 @@ typedef struct Jockey{
     float profit;
     struct Jockey *next;
 }Info;
-
+ 
 typedef struct{ // Declaração da estrutura que será utilizada para a lista.
     int size;
     Info *first;
     Info *last;
 }Jujuba;
-
+ 
 void insertProduct(Jujuba *listaux, int pid, int pamount, float pprice){
     Info *p, *new, *prev;
     new = (Info *)malloc(sizeof(Info));
@@ -38,7 +38,7 @@ void insertProduct(Jujuba *listaux, int pid, int pamount, float pprice){
         }
     }
     for(p = listaux -> first; p != NULL; p = p -> next){
-        if(p -> price < new -> price){
+        if(p -> price <= new -> price){
             if(p == listaux -> first){
                 new -> next = listaux -> first;
                 listaux -> first = new;
@@ -57,7 +57,7 @@ void insertProduct(Jujuba *listaux, int pid, int pamount, float pprice){
     listaux -> size++;
     return;
 }
-
+ 
 void addAmount(Jujuba *listaux, int pid, int pamount){
     Info *p;
     for(p = listaux -> first; p != NULL; p = p -> next){
@@ -69,7 +69,7 @@ void addAmount(Jujuba *listaux, int pid, int pamount){
     printf("nao existe\n");
     return;   
 }
-
+ 
 void buyProduct(Jujuba *listaux, int pid){
     Info *p;
     for(p = listaux -> first; p != NULL; p = p -> next){
@@ -88,7 +88,7 @@ void buyProduct(Jujuba *listaux, int pid){
     printf("nao existe\n");
     return;    
 }
-
+ 
 void removeProduct(Jujuba *listaux, int pid){
     Info *p, *prev;
     if(listaux -> size == 0){
@@ -104,6 +104,7 @@ void removeProduct(Jujuba *listaux, int pid){
                 return;
             }
             if(p == listaux -> last){
+                prev -> next = NULL;
                 listaux -> last = prev;
                 free(p);
                 listaux -> size--;
@@ -119,7 +120,7 @@ void removeProduct(Jujuba *listaux, int pid){
     printf("nao existe\n");
     return;
 }
-
+ 
 int main(){
     int L, pid, pamount, op, i;
     float pprice;
@@ -152,7 +153,6 @@ int main(){
     }
     for(j = list.first; j != NULL; j = j -> next){
         printf("%d %f\n", j -> idprod, j -> profit);
-        
     }
     return 0;
 }
