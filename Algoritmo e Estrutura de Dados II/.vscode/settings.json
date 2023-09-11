@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    ".is(n.teste),{}.format()&print(f{}).py": "python",
+    "stdio.h": "c"
+  }
+}
