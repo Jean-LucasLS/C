@@ -2,7 +2,6 @@
 #include <string.h>
 #define RANGE 255
 
-// The main function that sort the given string arr[] in alphabetical order
 void countSort(char arr[])
 {
   // The output character array that will have sorted arr
@@ -28,23 +27,17 @@ void countSort(char arr[])
     --count[arr[i]];
   }
 
-  /*
-  For Stable algorithm
+  /*For Stable algorithm
   for (i = sizeof(arr)-1; i>=0; --i){
     output[count[arr[i]]-1] = arr[i];
     --count[arr[i]];
-  }
+  } */
 
-  For Logic : See implementation
-  */
-
-  // Copy the output array to arr, so that arr now
-  // contains sorted characters
+  // Copy the output array to arr, so that arr now contains sorted characters
   for (i = 0; arr[i]; ++i)
     arr[i] = output[i];
 }
 
-// Driver code
 int main()
 {
   char arr[] = "geeksforgeeks";
