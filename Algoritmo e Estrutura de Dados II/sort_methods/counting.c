@@ -2,8 +2,8 @@
 #include <string.h>
 #define RANGE 255
 
-void countSort(char arr[])
-{
+void countSort(char arr[]){
+
   // The output character array that will have sorted arr
   char output[strlen(arr)];
 
@@ -38,8 +38,7 @@ void countSort(char arr[])
     arr[i] = output[i];
 }
 
-int main()
-{
+int main(){
   char arr[] = "geeksforgeeks";
 
   countSort(arr);
